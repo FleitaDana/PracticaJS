@@ -1,0 +1,236 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+        //Punto 1
+        document.write('Mi nombre es Dana' + '<br>');
+        document.write('Tengo 22 años' + '<br>');
+
+        //Punto 2
+        let nombreEmpleado = 'Bartolo';
+        let sueldo = parseInt(100);
+        document.write(nombreEmpleado + '<br>');
+        document.write(sueldo + '<br>');
+
+        //Punto 3
+        let nombreUsuario;
+        let mail;
+        nombreUsuario = prompt('Ingresa su nombre a continuación: ');
+        mail = prompt('Ingresa su email  a continuación: ');
+        document.write('Hola ' + nombreUsuario);
+        document.write(', asi que tu email es: ' + mail);
+
+        //Punto 4
+        let ladoCuadrado;
+        let perimetro;
+        ladoCuadrado = prompt('Ingrese el lado del cuadrado:');
+        perimetro = parseInt(ladoCuadrado) * parseInt(ladoCuadrado);
+        document.write('El perimetro del cuadrado es: ' + perimetro + '<br>');
+
+        let num1;
+        let num2;
+        let num3;
+        let num4;
+        let suma;
+        let producto;
+
+        num1 = prompt('Ingresa numero 1: ');
+        num2 = prompt('Ingresa numero 2: ');
+        num3 = prompt('Ingresa numero 3: ');
+        num4 = prompt('Ingresa numero 4: ');
+
+        suma = parseInt(num1) + parseInt(num2);
+        producto = parseInt(num3) * parseInt(num4);
+
+        document.write('La suma del 1er y 2do numero es: ' + suma + '<br>');
+        document.write('El producto del 3er y 4to numero es: ' + producto + '<br>');
+
+        let sumaValores;
+        let productoValores;
+        sumaValores = parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4);
+        productoValores = parseInt(num1) * parseInt(num2) * parseInt(num3) * parseInt(num4);
+
+        //Estructura condicional simple
+
+        //Estructura condicional compuesta
+        let nota1, nota2, nota3;
+        let promedio;
+
+        nota1 = parseInt(prompt('Ingrese nota1: '));
+        nota2 = parseInt(prompt('Ingrese nota2 '));
+        nota3 = parseInt(prompt('Ingrese nota3: '));
+
+        promedio = (nota1 + nota2 + nota3) / 3;
+
+        if (promedio >= 7) {
+            document.write('Promocionado');
+        } else {
+            document.write('Reprobado');
+        }
+
+
+        //Estructura condicional anidada
+        let num;
+
+        num = parseInt(prompt('Ingrese el numero a evaluar: '));
+
+        if (num > 0) {
+            document.write('El número es positivo');
+        } else if (num < 0) {
+            document.write('El número es negativo');
+        } else {
+            document.write('El número es 0');
+        }
+
+
+        //Operadores lógicos &&
+        let dia, mes, anio;
+        dia = parseInt(prompt('Ingrese el día: '));
+        mes = parseInt(prompt('Ingrese el mes: '));
+        anio = parseInt(prompt('Ingrese el año: '));
+
+        if (dia == 25 && mes == 12 && anio == 2024) {
+            document.write('La fecha ingresada corresponde a navidad');
+        } else {
+            document.write('La fecha ingresada NO corresponde a navidad');
+        }
+
+
+        //Operadores lógicos ||
+        let nume1;
+        let nume2;
+        let nume3;
+
+
+        nume1 = parseInt(prompt('Ingresa numero 1: '));
+        nume2 = parseInt(prompt('Ingresa numero 2: '));
+        nume3 = parseInt(prompt('Ingresa numero 3: '));
+
+        if (nume1 < 10 || nume2 < 10 || nume3 < 10) {
+            document.write('Uno de los numeros es menor a diez');
+        }
+
+        //Swicht
+
+        let palabra;
+        palabra = prompt('Ingrese la palabra: ');
+
+
+        switch (palabra) {
+            case 'casa':
+                document.write('house');
+                break;
+            case 'mesa':
+                document.write('table');
+                break;
+            case 'perro':
+                document.write('dog');
+                break;
+            case 'gato':
+                document.write('cat');
+                break;
+            default:
+                document.write('no ingreso un valor correcto');
+                break;
+        }
+
+
+
+        //Funciones
+
+        function contemosJuntos() {
+            num1 = parseInt(prompt('Ingresa un numero: '));
+            num2 = parseInt(prompt('Ingresa un número mayor al anterior: '));
+            for (let f = num1; f <= num2; f++) {
+                document.write(f + " ");
+            }
+        }
+
+    
+
+        contemosJuntos();
+  
+
+        //Funciones con parámetros
+
+        function encontrarMenor(num1, num2, num3) {
+            return Math.min(num1, num2, num3);
+        }
+
+        encontrarMenor(1, 5, 6);
+
+        document.write('Menor valor ' + encontrarMenor(1, 5, 6));
+
+ */
+
+       // Clase Array
+       function cargar(valores) {
+        for (let f = 0; f < valores.length; f++) {
+            let v = prompt('Ingrese valor' + f + ' : ');
+            valores[f] = parseInt(v);
+        }
+    }
+
+    function valorAcumulado(valores) {
+        let total = 0;
+        for (let f = 0; f < valores.length; f++) {
+            total = total + valores[f];
+        }
+        document.write('Listado de valores<br>');
+        for (let f = 0; f < valores.length; f++) {
+            document.write(valores[f] + '<br>');
+        }
+        document.write('Total de valores acumulados:' + total);
+    }
+
+    function valorAcumuladoMayor36(valores) {
+        let total = 0;
+        for (let f = 0; f < valores.length; f++) {
+            if (valores[f] > 36) {
+                total = total + valores[f];
+            }
+        }
+        document.write('Listado de valores<br>');
+        for (let f = 0; f < valores.length; f++) {
+            document.write(valores[f] + '<br>');
+        }
+        document.write('Total de valores acumulados mayores a 36:' + total);
+    }
+
+    function valoresMayor50(valores) {
+        let total = 0;
+        for (let f = 0; f < valores.length; f++) {
+            if (valores[f] > 50) {
+                total++;
+            }
+        }
+        document.write('Listado de valores<br>');
+        for (let f = 0; f < valores.length; f++) {
+            document.write(valores[f] + '<br>');
+        }
+        document.write('Total de valores mayores a 50:' + total);
+    }
+
+
+
+    let valores;
+    valores = new Array(8);
+    cargar(valores);
+    valorAcumulado(valores);
+    valorAcumuladoMayor36(valores);
+    valoresMayor50(valores);
+ 
+
+    </script>
+</body>
+
+</html>

@@ -1,152 +1,252 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cargar sueldos de empleados</title>
 </head>
 
 <body>
 
+    <!--
+    <h1>Carga de sueldos</h1>
+    <button onclick="cargarSueldos()">Cargar sueldos</button>
+    <p id="sueldosOrdenados"></p> 
+
     <script>
+    
+        function cargarSueldos() { // Función para cargar y ordenar sueldos
+            let sueldos = []; // Array vacío donde se almacenarán los sueldos ingresados
+            let sueldo; // Variable que usaremos para ingresar cada sueldo
 
-        //Punto 1
-        document.write('Mi nombre es Dana' + '<br>');
-        document.write('Tengo 22 años' + '<br>');
+            // Bucle para cargar sueldos
+            while (true) { // Bucle infinito hasta que se ingrese 0 para finalizar
+                sueldo = parseFloat(prompt("Ingrese el sueldo del empleado (ingrese 0 para finalizar):")); //Ingreso de sueldos
 
-        //Punto 2
-        let nombreEmpleado = 'Bartolo';
-        let sueldo = parseInt(100);
-        document.write(nombreEmpleado + '<br>');
-        document.write(sueldo + '<br>');
+                if (sueldo === 0) { // Si el sueldo ingresado es 0, finaliza el bucle
+                    break;
+                }
 
-        //Punto 3
-        let nombreUsuario;
-        let mail;
-        nombreUsuario = prompt('Ingresa su nombre a continuación: ');
-        mail = prompt('Ingresa su email  a continuación: ');
-        document.write('Hola ' + nombreUsuario);
-        document.write(', asi que tu email es: ' + mail);
+                
+                if (!isNaN(sueldo) && sueldo > 0) { //Verificamos si sueldo es un numero y mayor a 0
+                    sueldos.push(sueldo); // Si es válido, lo agregamos al array 'sueldos'
+                } else {
+                    alert("Por favor, ingrese un sueldo válido."); // Sino, mostramos una alerta
+                }
+            }
 
-        //Punto 4
-        let ladoCuadrado;
-        let perimetro;
-        ladoCuadrado = prompt('Ingrese el lado del cuadrado:');
-        perimetro = parseInt(ladoCuadrado) * parseInt(ladoCuadrado);
-        document.write('El perimetro del cuadrado es: ' + perimetro + '<br>');
+            // Implementamos el metodo sort que ordenar los sueldos de mayor a menor
+            sueldos.sort(function(v1, v2) { // Función de comparación para ordenar el array
+                if (v1 < v2) { //
+                    return 1; // Si v1 es menor que v2, devuelve 1, lo que indica que v1 debe colocarse después de v2
+                } else {
+                    return -1; // Si v1 es mayor o igual que v2, devuelve -1, lo que indica que v1 debe permanecer antes de v2 o en su lugar.
+                }
+            });
 
-        let num1;
-        let num2;
-        let num3;
-        let num4;
-        let suma;
-        let producto;
-
-        num1 = prompt('Ingresa numero 1: ');
-        num2 = prompt('Ingresa numero 2: ');
-        num3 = prompt('Ingresa numero 3: ');
-        num4 = prompt('Ingresa numero 4: ');
-
-        suma = parseInt(num1) + parseInt(num2);
-        producto = parseInt(num3) * parseInt(num4);
-
-        document.write('La suma del 1er y 2do numero es: ' + suma + '<br>');
-        document.write('El producto del 3er y 4to numero es: ' + producto + '<br>');
-
-        let sumaValores;
-        let productoValores;
-        sumaValores = parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4);
-        productoValores = parseInt(num1) * parseInt(num2) * parseInt(num3) * parseInt(num4);
-
-        //Estructura condicional simple
-
-
-
-
-        //Estructura condicional compuesta
-        let nota1, nota2, nota3;
-        let promedio;
-
-        nota1 = parseInt(prompt('Ingrese nota1: '));
-        nota2 = parseInt(prompt('Ingrese nota2 '));
-        nota3 = parseInt(prompt('Ingrese nota3: '));
-
-        promedio = (nota1 + nota2 + nota3) / 3;
-
-        if (promedio >= 7) {
-            document.write('Promocionado');
-        } else {
-            document.write('Reprobado');
+            // Mostramos los sueldos ordenados
+            document.getElementById("sueldosOrdenados").innerHTML = "Sueldos ordenados de mayor a menor:<br>" + sueldos.join("<br>"); //jpin convierte los datos del array en cadena de texto
+            // Muestra los sueldos ordenados en el párrafo con el id 'sueldosOrdenados', separando cada sueldo con un <br>
         }
 
+    </script>-->
 
-        //Estructura condicional anidada
-        let num;
+    <!-- formularios y eventos
 
-        num = parseInt(prompt('Ingrese el numero a evaluar: '));
+    <form> 
+        <input type="button" onClick="presion1()" value="Boton 1">
+        <input type="button" onClick="presion2()" value="Boton 2">
+        <input type="button" onClick="presion3()" value="Boton 3">
+    </form>
 
-        if (num > 0) {
-            document.write('El número es positivo');
-        } else if (num < 0) {
-            document.write('El número es negativo');
-        } else {
-            document.write('El número es 0');
+    <script>
+        // Funciones para los botones
+        function presion1() {
+            alert('Se presionó el botón 1');
         }
 
-
-        //Operadores lógicos &&
-        let dia, mes, anio;
-        dia = parseInt(prompt('Ingrese el día: '));
-        mes = parseInt(prompt('Ingrese el mes: '));
-        anio = parseInt(prompt('Ingrese el año: '));
-
-        if (dia == 25 && mes == 12 && anio == 2024) {
-            document.write('La fecha ingresada corresponde a navidad');
-        } else {
-            document.write('La fecha ingresada NO corresponde a navidad');
+        function presion2() {
+            alert('Se presionó el botón 2');
         }
 
+        function presion3() {
+            alert('Se presionó el botón 3');
+        }
+    </script> -->
 
-        //Operadores lógicos ||
-        let nume1;
-        let nume2;
-        let nume3;
+    <!-- Control PASSWORD
+    <form>
+        Ingrese clave:
+        <input type="password" id="password1">
+        <br> Repita la clave:
+        <input type="password" id="password2">
+        <br>
+        <input type="button" value="Verificar clave" onClick="verificar()">
+    </form>
+
+    <script>
+        function verificar() {
+            let clave1 = document.getElementById('password1').value;
+            let clave2 = document.getElementById('password2').value;
+            if (clave1 == clave2) {
+                alert('Las dos claves ingresadas son iguales');
+            } else {
+                alert('Las dos claves ingresadas son distintas');
+            }
+        }
+    </script>-->
+
+    <!-- Control SELECT
+    <form>
+        <p>Pizzas:</p>
+        <p><select id="pizza" onChange="mostrarSeleccionPizza()">
+                <option value="250">Jamon y Queso</option>
+                <option value="200">Muzzarella</option>
+                <option value="300">Morrones</option>
+            </select></p>
+        <p><input type="text" id="mensaje"></p>
+    </form>
+
+    <script>
+        function mostrarSeleccionPizza() {
+            document.getElementById('mensaje').value =
+                document.getElementById('pizza').options[document.getElementById('pizza').selectedIndex].value;
+        }
+    </script>-->
 
 
-        nume1 = parseInt(prompt('Ingresa numero 1: '));
-        nume2 = parseInt(prompt('Ingresa numero 2: '));
-        nume3 = parseInt(prompt('Ingresa numero 3: '));
+    <!-- Eventos onFocus y onBlur
+    <form>
+        Ingrese nombre de usuario:
+        <input type="text" id="usuario"><br> Ingrese clave:
+        <input type="password" id="clave" onBlur="verificar(this)"><br>
+        <input type="button" value="confirmar">
+    </form>
 
-        if (nume1 < 10 || nume2 < 10 || nume3 < 10) {
-            document.write('Uno de los numeros es menor a diez');
+    <script>
+        function verificar(control) {
+            if (control.value.length < 7 || control.value.length > 20) {
+                alert('Cantidad de caracteres no validos (deben ser entre 7-20 caracteres)');
+            }
+        }
+    </script>-->
+
+    <!-- Evento onLoad
+    <h1>Bienvenidos</h1>
+
+    <script>
+        function mostrarMensaje() {
+            alert('Mensaje automatico apenas se carga la pagina');
+        }
+    </script>-->
+
+    <!-- Obejto window 
+    <form>
+        <input type="button" value="abrir ventana" onClick="abrirVentana()">
+    </form>
+
+    <script>
+        function abrirVentana() {
+            let ventana = open('', '', 'width=600,height=300');
+        }
+    </script>-->
+
+    <!-- Propiedad screen del objeto window	
+    <form>
+        <input type="button" value="abrir ventana" onClick="abrirVentana()">
+    </form>
+
+    <script>
+        function abrirVentana() {
+            var ventana = open('', '', 'width=' + screen.availWidth + ',height=' + screen.availHeight / 2);
+        }
+    </script>-->
+
+
+    <!-- Vectores con componentes de tipo objeto.
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.imprimirNombre = function() {
+                document.write(this.nombre + ' que tiene una edad ' + this.edad + '<br>');
+            }
         }
 
-        //Swicht
+        let vector = new Array(4);
+        vector[0] = new Persona('juan', 44);
+        vector[1] = new Persona('ana', 22);
+        vector[2] = new Persona('pedro', 44);
+        vector[3] = new Persona('marcos', 18);
+        let posmayor = 0;
+        for (let f = 1; f < vector.length; f++) {
+            if (vector[f].edad > vector[posmayor].edad) {
+                posmayor = f;
+            }
+        }
+        document.write('Personas con mayor edad:<br>');
+        for (let f = 0; f < vector.length; f++) {
+            if (vector[f].edad == vector[posmayor].edad) {
+                vector[f].imprimirNombre();
+            }
+        }
+    </script>-->
 
-        let palabra;
-        palabra = prompt('Ingrese la palabra: ');
+    <!-- Array: Diferentes formas de crearlos
+    <script>
+        let meses = new Array('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre');
+        let dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+        for (let f = 0; f < meses.length; f++) {
+            document.write(meses[f] + '<br>');
+        }
+        document.write('<br>');
+        for (let f = 0; f < dias.length; f++) {
+            document.write(dias[f] + '<br>');
+        }
+    </script>-->
 
+    <!-- Array: métodos push y pop
+    <script>
+        let vec = [];
+        for (let f = 0; f < 5; f++) {
+            let nro = 1 + (Math.random() * 1000);
+            vec.push(parseInt(nro));
+        }
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+        let sumaultimos = vec.pop() + vec.pop();
+        document.write('La suma de las dos últimas componentes es:' + sumaultimos + '<br>');
+        document.write('Tamaño final del vector:' + vec.length + '<br>');
+        document.write('Elementos restantes del vector<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+    </script>-->
 
-        switch (palabra) {
-            case 'casa':
-                document.write('house');
-                break;
-            case 'mesa':
-                document.write('table');
-                break;
-            case 'perro':
-                document.write('dog');
-                break;
-            case 'gato':
-                document.write('cat');
-                break;
-            default:
-                document.write('no ingreso un valor correcto');
-                break;
+    <!-- Funciones: objeto arguments
+    <script>
+        function mayor() {
+            let may = arguments[0];
+            for (let f = 1; f < arguments.length; f++) {
+                if (arguments[f] > may) {
+                    may = arguments[f];
+                }
+            }
+            return may;
         }
 
+        document.write(mayor(7, 22, 4, 66, 3, 22, 55));
+    </script>-->
 
-    </script>
+    <!-- Operador condicional ?
+    <script>
+        let sueldo = parseFloat(prompt('Ingrese el sueldo del trabajador:'));
+        sueldo > 10000 ? sueldo = sueldo * 0.90 : sueldo = sueldo * 0.95;
+        alert('El sueldo con el descuento es de: ' + sueldo);
+    </script>-->
+
 </body>
 
 </html>
